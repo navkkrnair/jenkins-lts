@@ -16,5 +16,6 @@ RUN apt-get update && \
       stable" && \
    apt-get update && \
    apt-get -y install docker-ce
-   USER jenkins
 RUN usermod -aG docker jenkins
+USER jenkins
+
