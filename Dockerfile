@@ -1,7 +1,7 @@
 FROM jenkins/jenkins:lts
 MAINTAINER navkkrnair@gmail.com
+USER root
 # Install Git
-RUN apt-get update && apt-get -y install software-properties-common
 RUN apt-get update && apt-get -y install git
 # Install the latest Docker CE binaries
 RUN apt-get update && \
@@ -16,4 +16,5 @@ RUN apt-get update && \
       stable" && \
    apt-get update && \
    apt-get -y install docker-ce
+   USER jenkins
 RUN usermod -aG docker jenkins
